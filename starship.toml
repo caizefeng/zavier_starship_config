@@ -1,5 +1,5 @@
 format = """
-[](fg:#9A348E)\
+[](#9A348E)\
 $os\
 $username\
 [](bg:#DA627D fg:#9A348E)\
@@ -28,36 +28,6 @@ $time\
 [ ](fg:#33658A)\
 """
 
-# format = """
-# [](#9A348E)\
-# $os\
-# $username\
-# [](bg:#DA627D fg:#9A348E)\
-# $directory\
-# [](fg:#DA627D bg:#FCA17D)\
-# $git_branch\
-# $git_status\
-# [](fg:#FCA17D bg:#86BBD8)\
-# $c\
-# $elixir\
-# $elm\
-# $golang\
-# $gradle\
-# $haskell\
-# $java\
-# $julia\
-# $nodejs\
-# $nim\
-# $rust\
-# $scala\
-# [](fg:#86BBD8 bg:#06969A)\
-# $docker_context\
-# [](fg:#06969A bg:#33658A)\
-# $time\
-# [ ](fg:#33658A)\
-# """
-
-
 # Disable the blank line at the start of the prompt
 # add_newline = false
 
@@ -74,29 +44,27 @@ disabled = false
 # represents the current operating system
 [os]
 style = "bg:#9A348E"
-#disabled = true # Disabled by default
-disabled = false
+disabled = false # Disabled by default
 
 [directory]
 style = "bg:#DA627D"
 format = "[ $path ]($style)"
-# truncation_length = 3
 truncation_length = 4
 truncation_symbol = "…/"
-read_only = " "
+read_only = "🔒"
 
 # Here is how you can shorten some long paths by text replacement
 # similar to mapped_locations in Oh My Posh:
 [directory.substitutions]
-"Documents" = " "
+"Documents" = "󰈙 "
 "Downloads" = " "
 "Music" = " "
 "Pictures" = " "
 # Keep in mind that the order matters. For example:
-# "Important Documents" = "  "
+# "Important Documents" = " 󰈙 "
 # will not be replaced, because "Documents" was already substituted before.
 # So either put "Important Documents" before "Documents" or use the substituted version:
-# "Important  " = "  "
+# "Important 󰈙 " = " 󰈙 "
 
 [c]
 symbol = " "
@@ -174,7 +142,7 @@ style = "bg:#86BBD8"
 format = '[ $symbol ($version) ]($style)'
 
 [nim]
-symbol = " "
+symbol = "󰆥 "
 style = "bg:#86BBD8"
 format = '[ $symbol ($version) ]($style)'
 
@@ -190,104 +158,52 @@ format = '[ $symbol ($version) ]($style)'
 
 [time]
 disabled = false
-# time_format = "%R" # Hour:Minute Format
-time_format = "%T"
+time_format = "%T" # Hour:Minute:Second Format
 style = "bg:#33658A"
-format = '[ ♥ $time ]($style)'
+format = '[  $time ]($style)'
 
 
-# Additional Nerd Font
-[aws]
-symbol = "  "
-
-[buf]
-symbol = " "
-
-[dart]
-symbol = " "
-
-[fossil_branch]
-symbol = " "
-
-[guix_shell]
-symbol = " "
-
-[haxe]
-symbol = "⌘ "
-
-[hg_branch]
-symbol = " "
-
-[hostname]
-ssh_symbol = " "
-
-[lua]
-symbol = " "
-
-[memory_usage]
-symbol = " "
-
-[meson]
-symbol = "喝 "
-
-[nix_shell]
-symbol = " "
-
+# This is the default symbols table.
 [os.symbols]
-Alpaquita = " "
-Alpine = " "
-Amazon = " "
-Android = " "
-Arch = " "
-Artix = " "
-CentOS = " "
-Debian = " "
-DragonFly = " "
-Emscripten = " "
-EndeavourOS = " "
-Fedora = " "
-FreeBSD = " "
-Garuda = "﯑ "
-Gentoo = " "
-HardenedBSD = "ﲊ "
-Illumos = " "
-Linux = " "
-Mabox = " "
-Macos = " "
-Manjaro = " "
-Mariner = " "
-MidnightBSD = " "
-Mint = " "
-NetBSD = " "
-NixOS = " "
-OpenBSD = " "
-openSUSE = " "
-OracleLinux = " "
-Pop = " "
-Raspbian = " "
-Redhat = " "
-RedHatEnterprise = " "
-Redox = " "
-Solus = "ﴱ "
-SUSE = " "
-Ubuntu = " "
-Unknown = " "
-Windows = " "
+Alpaquita = "🔔 "
+Alpine = "🏔️ "
+Amazon = "🙂 "
+Android = "🤖 "
+Arch = "🎗️ "
+Artix = "🎗️ "
+CentOS = "💠 "
+Debian = "🌀 "
+DragonFly = "🐉 "
+Emscripten = "🔗 "
+EndeavourOS = "🚀 "
+Fedora = "🎩 "
+FreeBSD = "😈 "
+Garuda = "🦅 "
+Gentoo = "🗜️ "
+HardenedBSD = "🛡️ "
+Illumos = "🐦 "
+Linux = "🐧 "
+Mabox = "📦 "
+Macos = "🍎 "
+Manjaro = "🥭 "
+Mariner = "🌊 "
+MidnightBSD = "🌘 "
+Mint = "🌿 "
+NetBSD = "🚩 "
+NixOS = "❄️ "
+OpenBSD = "🐡 "
+OpenCloudOS = "☁️ "
+openEuler = "🦉 "
+openSUSE = "🦎 "
+OracleLinux = "🦴 "
+Pop = "🍭 "
+Raspbian = "🍓 "
+Redhat = "🎩 "
+RedHatEnterprise = "🎩 "
+Redox = "🧪 "
+Solus = "⛵ "
+SUSE = "🦎 "
+Ubuntu = "🎯 "
+Unknown = "❓ "
+Windows = "🪟 "
 
-[package]
-symbol = " "
-
-[pijul_channel]
-symbol = "󰰚 "
-
-[python]
-symbol = " "
-
-[rlang]
-symbol = "ﳒ "
-
-[ruby]
-symbol = " "
-
-[spack]
-symbol = "󰰢 "
